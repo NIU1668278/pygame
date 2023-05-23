@@ -1,0 +1,55 @@
+En els codis anteriors, hem creat un joc utilitzant la llibreria Pygame. 
+Hem utilitzat el patró de disseny Prototype per crear instàncies de sprites de 
+manera eficient i dinàmica.
+
+Hem definit una classe base anomenada `GameSprite` que actua com a prototipus 
+per a diferents tipus de sprites. A continuació, hem creat diverses subclasses 
+de `GameSprite` com ara `Bird`, `Cloud`, `Umbrella` i `Mountain`, que 
+representen els diferents tipus de sprites en el joc.
+
+Hem creat una classe anomenada `FactorySprites` que actua com a fàbrica de 
+sprites utilitzant els prototips. Aquesta classe rep una llista de prototips, 
+juntament amb les llistes de períodes de temps i tipus d'esdeveniments 
+corresponents a cada tipus de sprite. La classe `FactorySprites` utilitza els 
+prototips per clonar i crear nous sprites en els moments especificats pels 
+períodes de temps i els tipus d'esdeveniments.
+
+Això ens permet crear i gestionar dinàmicament els diferents sprites del joc, 
+com ara ocells, núvols, paraigües i muntanyes, utilitzant el patró Prototype 
+i la fàbrica de sprites.
+
+En resum, hem aplicat el patró de disseny Prototype per clonar prototips de 
+sprites i crear nous sprites de manera eficient i dinàmica en el nostre joc 
+utilitzant la classe `FactorySprites`. Això ens permet tenir una gestió flexible
+dels diferents tipus de sprites i millorar l'eficiència en la creació de nous 
+elements en el joc.
+
+
+Cada classe hereta de la classe GameSprite, que a la vegada hereta de la classe 
+pygame.sprite.Sprite. Les classes definides són les següents:
+
+- **Bird**: Representa un ocell en el joc. Té una velocitat aleatòria i es mou 
+en una trajectòria sinusoidal cap avall. Quan surt de la pantalla per 
+l'esquerra, és eliminat.
+
+- **Cloud**: Representa un núvol en el joc. Es mou cap a l'esquerra a una 
+velocitat constant. Quan surt de la pantalla per l'esquerra, és eliminat.
+
+- **Umbrella**: Representa una paraigua en el joc. Té una velocitat aleatòria i 
+es mou cap amunt des de la part inferior de la pantalla. Quan surt de la 
+pantalla per la part superior, és eliminat.
+
+- **Mountain**: Representa una muntanya en el joc. Es mou cap a l'esquerra a 
+una velocitat constant. Quan surt de la pantalla per l'esquerra, és eliminat.
+
+Totes les classes tenen un mètode `clone()` que retorna una nova instància de 
+la mateixa classe. Aquest mètode es pot utilitzar per clonar sprites existents 
+i afegir-los al joc.
+
+Cada sprite té una imatge associada, carregada des d'un fitxer d'imatge. Les 
+imatges tenen un color de transparència perquè els sprites es renderitzin 
+correctament a la pantalla.
+
+En resum, aquest codi defineix les classes de sprites que es faran servir en el 
+joc i proporciona mètodes per actualitzar la posició dels sprites i clonar-los 
+quan sigui necessari.
